@@ -48,16 +48,22 @@ describe Dessert do
         dessert.add_ingredient(ingredient)
       end
 
-      expect(dessert.mix!).not_to eq(ingredients)
-      expect(dessert.mix!.sort).to eq(ingredients.sort)
+      dessert.mix!
+      expect(dessert.ingredients).not_to eq(ingredients)
+      expect(dessert.ingredients.sort).to eq(ingredients.sort)
 
     end
   end
 
   describe "#eat" do
-    it "subtracts an amount from the quantity"
 
-    it "raises an error if the amount is greater than the quantity"
+    it "subtracts an amount from the quantity" do
+      expect( dessert.eat(20) ).to eq(80)
+    end
+    it "raises an error if the amount is greater than the quantity" do
+      expect{ dessert.eat(200) }.to raise_error('not enough left!')
+    end
+
   end
 
   describe "#serve" do
