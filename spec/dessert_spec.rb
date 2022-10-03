@@ -41,7 +41,17 @@ describe Dessert do
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    it "shuffles the ingredient array" do
+      ingredients = ['pepper', 'garlic', 'meat']
+
+      ingredients.each do |ingredient|
+        dessert.add_ingredient(ingredient)
+      end
+
+      expect(dessert.mix!).not_to eq(ingredients)
+      expect(dessert.mix!.sort).to eq(ingredients.sort)
+
+    end
   end
 
   describe "#eat" do
