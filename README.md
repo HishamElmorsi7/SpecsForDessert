@@ -1,3 +1,3 @@
 # what I learned
-- Practiced more about writing tests using RSPEC
-- Understood more about Mocks and how to work with double!
+- Practiced more writing tests with RSPEC
+- Understood about Mocks and how to work with double!
